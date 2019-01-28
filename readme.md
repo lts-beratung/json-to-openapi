@@ -4,11 +4,11 @@
 
 Using both [json-schema-ref-parser](https://www.npmjs.com/package/json-schema-ref-parser) and [json-schema-to-openapi schema](https://github.com/wework/json-schema-to-openapi-schema).
 
-# Features
+# Features
 
 Please read the documentation for [json-schema-ref-parser](https://www.npmjs.com/package/json-schema-ref-parser) and [json-schema-to-openapi schema](https://github.com/wework/json-schema-to-openapi-schema#features) to get a complete list of all the features available.
 
-# Install
+# Install
 
 ```
 $ npm install --global json-to-openapi
@@ -150,7 +150,7 @@ After the conversion:
 }
 ```
 
-# See also
+# See also
 
 * [json-schema-ref-parser](https://www.npmjs.com/package/json-schema-ref-parser)
 * [json-schema-to-openapi schema](https://github.com/wework/json-schema-to-openapi-schema)
