@@ -1,6 +1,6 @@
 {
 	"name": "json-to-openapi",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "A small cli application to convert json schemas to openapi schemas.",
 	"license": "MIT",
 	"repository": "vikepic/json-to-openapi",
