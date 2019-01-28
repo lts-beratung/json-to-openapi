@@ -1,0 +1,55 @@
+{
+  "description": "A customer schema",
+  "type": "object",
+  "required": [
+    "id"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Customer ID"
+    },
+    "firstName": {
+      "type": "string",
+      "description": "First name of a customer"
+    },
+    "lastName": {
+      "type": "string",
+      "description": "Last name of a customer"
+    },
+    "emails": {
+      "type": "array",
+      "description": "All emails of the customer",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Identifier of the email"
+          },
+          "mail": {
+            "type": "string",
+            "description": "Mail address"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "email": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identifier of the email"
+        },
+        "mail": {
+          "type": "string",
+          "description": "Mail address"
+        }
+      }
+    }
+  }
+}
