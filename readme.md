@@ -33,25 +33,25 @@ Basic use case where one wants to convert a json schema stored under schema.json
 // schema.json
 {
 	"$schema": "http://json-schema.org/draft-06/schema#",
-		"description": "A customer schema",
-		"type": "object",
-		"required": [
-			"id"
-		],
-		"properties": {
-			"id": {
-				"type": "string",
-				"description": "Customer ID"
-			},
-			"firstName": {
-				"type": "string",
-				"description": "First name of a customer"
-			},
-			"lastName": {
-				"type": "string",
-				"description": "Last name of a customer"
-			}
+	"description": "A customer schema",
+	"type": "object",
+	"required": [
+		"id"
+	],
+	"properties": {
+		"id": {
+			"type": "string",
+			"description": "Customer ID"
+		},
+		"firstName": {
+			"type": "string",
+			"description": "First name of a customer"
+		},
+		"lastName": {
+			"type": "string",
+			"description": "Last name of a customer"
 		}
+	}
 }
 ```
 
@@ -60,24 +60,24 @@ After conversion with `json-to-openapi schema.json`:
 ```
 {
 	"description": "A customer schema",
-		"type": "object",
-		"required": [
-			"id"
-		],
-		"properties": {
-			"id": {
-				"type": "string",
-				"description": "Customer ID"
-			},
-			"firstName": {
-				"type": "string",
-				"description": "First name of a customer"
-			},
-			"lastName": {
-				"type": "string",
-				"description": "Last name of a customer"
-			}
+	"type": "object",
+	"required": [
+		"id"
+	],
+	"properties": {
+		"id": {
+			"type": "string",
+			"description": "Customer ID"
+		},
+		"firstName": {
+			"type": "string",
+			"description": "First name of a customer"
+		},
+		"lastName": {
+			"type": "string",
+			"description": "Last name of a customer"
 		}
+	}
 }
 ```
 
@@ -91,14 +91,42 @@ It also dereferences `$ref` keywords, thanks to [json-schema-ref-parser](https:/
 		// ...
 		"emails": {
 			"type": "array",
-				"description": "All emails of the customer",
-				"items": {
-					"$ref": "#/definitions/email"
-				}
+			"description": "All emails of the customer",
+			"items": {
+				"$ref": "#/definitions/email"
+			}
 		}
 	},
-		"definitions": {
-			"email": {
+	"definitions": {
+		"email": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"id": {
+					"type": "string",
+					"description": "Identifier of the email"
+				},
+				"mail": {
+					"type": "string",
+					"description": "Mail address"
+				}
+			}
+		}
+	}
+}
+```
+
+After the conversion:
+
+```
+{
+	// ...
+	"properties": {
+		// ...
+		"emails": {
+			"type": "array",
+			"description": "All emails of the customer",
+			"items": {
 				"type": "object",
 				"additionalProperties": false,
 				"properties": {
@@ -113,40 +141,12 @@ It also dereferences `$ref` keywords, thanks to [json-schema-ref-parser](https:/
 				}
 			}
 		}
-}
-```
-
-After the conversion:
-
-```
-{
-	// ...
-	"properties": {
-		// ...
-		"emails": {
-			"type": "array",
-				"description": "All emails of the customer",
-				"items": {
-					"type": "object",
-					"additionalProperties": false,
-					"properties": {
-						"id": {
-							"type": "string",
-							"description": "Identifier of the email"
-						},
-						"mail": {
-							"type": "string",
-							"description": "Mail address"
-						}
-					}
-				}
-		}
 	},
-		"definitions": {
-			"email": {
-				// ...
-			}
+	"definitions": {
+		"email": {
+			// ...
 		}
+	}
 }
 ```
 
