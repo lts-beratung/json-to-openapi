@@ -1,4 +1,4 @@
-# json-to-openapi [![Build Status](https://travis-ci.org/vikepic/json-to-openapi.svg?branch=master)](https://travis-ci.org/vikepic/json-to-openapi)
+# json-to-openapi [![install size](https://flat.badgen.net/packagephobia/install/json-to-openapi)](https://packagephobia.now.sh/result?p=json-to-openapi) [![Build Status](https://flat.badgen.net/travis/vikepic/json-to-openapi)](https://travis-ci.org/vikepic/json-to-openapi) [![XO code style](https://flat.badgen.net/xo/status/json-to-openapi)](https://github.com/xojs/xo) 
 
 > A small cli application to convert json schemas to openapi schemas.
 
